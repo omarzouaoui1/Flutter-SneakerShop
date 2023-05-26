@@ -3,7 +3,12 @@ import 'package:flutter_sneaker_shop/models/shoe.dart';
 
 class ShoeTile extends StatelessWidget {
   Shoe shoe;
-  ShoeTile({super.key, required this.shoe});
+  void Function()? onTap;
+  ShoeTile({
+    super.key,
+    required this.shoe,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -54,17 +59,20 @@ class ShoeTile extends StatelessWidget {
                   Text(shoe.price, style: const TextStyle(color: Colors.grey))
                 ]),
                 //plus button
-                Container(
-                    padding: const EdgeInsets.all(20),
-                    decoration: const BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(12),
-                            bottomRight: Radius.circular(12))),
-                    child: const Icon(
-                      Icons.add,
-                      color: Colors.white,
-                    ))
+                GestureDetector(
+                  onTap: onTap,
+                  child: Container(
+                      padding: const EdgeInsets.all(20),
+                      decoration: const BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(12),
+                              bottomRight: Radius.circular(12))),
+                      child: const Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      )),
+                )
               ],
             ),
           )
