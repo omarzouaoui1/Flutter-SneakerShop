@@ -44,8 +44,8 @@ class IntroPage extends StatelessWidget {
           ),
           //start now button
           GestureDetector(
-            onTap: () => Navigator.push(
-                context, MaterialPageRoute(builder: (context) => HomePage())),
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const HomePage())),
             child: Container(
               decoration: BoxDecoration(
                   color: Colors.grey.shade900,
