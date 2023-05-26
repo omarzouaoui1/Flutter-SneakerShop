@@ -23,9 +23,12 @@ class IntroPage extends StatelessWidget {
             height: 48,
           ),
           //title
-          const Text(
-            "All Star",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          const Padding(
+            padding: EdgeInsets.only(bottom: 15.0),
+            child: Text(
+              "All Star",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+            ),
           ),
           //sub title
           const Text(

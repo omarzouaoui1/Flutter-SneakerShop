@@ -41,9 +41,12 @@ class _HomePageState extends State<HomePage> {
           elevation: 0,
           leading: Builder(
             builder: (context) => IconButton(
-              icon: const Icon(
-                Icons.menu,
-                color: Colors.black,
+              icon: const Padding(
+                padding: EdgeInsets.only(left: 12.0),
+                child: Icon(
+                  Icons.menu,
+                  color: Colors.black,
+                ),
               ),
               onPressed: () {
                 Scaffold.of(context).openDrawer();
@@ -52,11 +55,69 @@ class _HomePageState extends State<HomePage> {
           )),
       drawer: Drawer(
         backgroundColor: Colors.grey.shade900,
-        child: const Column(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            //logo
-
-            //pages
+            Column(
+              children: [
+                //logo
+                DrawerHeader(
+                  child: Image.asset(
+                    "lib/image/logo1.png",
+                    color: Colors.white,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Divider(
+                    color: Colors.grey.shade300,
+                  ),
+                ),
+                //pages
+                //home
+                const Padding(
+                  padding: EdgeInsets.only(left: 25.0),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.home,
+                      color: Colors.white,
+                    ),
+                    title: Text(
+                      "Home",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+                //info
+                const Padding(
+                  padding: EdgeInsets.only(left: 25.0),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.info,
+                      color: Colors.white,
+                    ),
+                    title: Text(
+                      "About",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            //logout
+            const Padding(
+              padding: EdgeInsets.only(left: 25.0, bottom: 25.0),
+              child: ListTile(
+                leading: Icon(
+                  Icons.logout,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  "Logout",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            )
           ],
         ),
       ),
